@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Scanner PWA</title>
+    <meta name="description" content="Simple PWA image scanner using TensorFlow.js" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#0f172a" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- iOS PWA support -->
+    <link rel="apple-touch-icon" href="icons/icon-192.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Image Scanner</h1>
+      <p>Capture or upload an image and detect objects on-device using TensorFlow.js.</p>
+    </header>
+
+    <main class="app-main">
+      <section class="card">
+        <h2>1. Choose Image</h2>
+        <p class="hint">
+          You can either open your camera (mobile or desktop) or pick an existing image from your
+          files.
+        </p>
+        <div class="input-group">
+          <label class="btn primary">
+            Upload Image
+            <input
+              id="upload-input"
+              type="file"
+              accept="image/*"
+              hidden
+            />
+          </label>
+          <button id="camera-button" class="btn secondary" type="button">
+            Open Camera
+          </button>
+          <button id="clear-button" class="btn secondary subtle" type="button" disabled>Clear</button>
+        </div>
+        <p id="status" class="status">Model loading, please wait…</p>
+      </section>
+
+      <section class="layout">
+        <div class="card">
+          <h2>2. Image Preview</h2>
+          <div class="preview-wrapper">
+            <video id="video" class="preview" autoplay playsinline muted style="display: none;"></video>
+            <canvas id="canvas" class="preview" width="320" height="240"></canvas>
+            <p id="no-image-text" class="placeholder">No image selected or captured yet.</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2>3. Detected Objects</h2>
+          <ul id="results" class="results-list"></ul>
+          <p id="results-empty" class="placeholder">Detection results will appear here.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>
+        Runs fully in your browser using
+        <a href="https://www.tensorflow.org/js" target="_blank" rel="noopener noreferrer">TensorFlow.js</a>.
+      </p>
+    </footer>
+
+    <!-- TensorFlow.js & COCO-SSD model via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+
+    <!-- App logic -->
+    <script src="app.js" type="module"></script>
+  </body>
+  </html>
+
+
