@@ -30,8 +30,10 @@ python -m http.server 4173
 npm install -g serve
 serve -l 4173 .
 ```
+DEMO LINk of PWA:http://localhost:4173/
 
 Then open:
+
 
 - `http://localhost:4173/` in your browser.
 
@@ -78,5 +80,6 @@ You should see the **Image Scanner** UI. The first load might take a few seconds
 - **Libraries used**:
   - `@tensorflow/tfjs` (CDN).
   - `@tensorflow-models/coco-ssd` (CDN).
+    
 
 
