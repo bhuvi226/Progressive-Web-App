@@ -30,8 +30,10 @@ python -m http.server 4173
 npm install -g serve
 serve -l 4173 .
 ```
+DEMO LINk of PWA:http://localhost:4173/
 
 Then open:
+
 
 - `http://localhost:4173/` in your browser.
 
@@ -83,14 +85,6 @@ To run on other machines, deploy the app to a host. The app now uses **relative 
 - `manifest.webmanifest`: PWA manifest with app metadata and icons.
 - `service-worker.js`: Service worker implementing a simple cache-first strategy for static assets.
 
-## What to Submit
-
-For your assessment submission, you can:
-
-- Push this folder to a **GitHub repository** and share the link.
-- Optionally deploy to a static host (e.g. GitHub Pages, Netlify, Vercel) and share a **live demo URL**.
-
-In your short note, you can summarize:
 
 - **Approach**:
   - "Built a plain JS PWA that captures or uploads an image and performs on-device object detection using TensorFlow.js (COCO-SSD)."
@@ -98,5 +92,6 @@ In your short note, you can summarize:
 - **Libraries used**:
   - `@tensorflow/tfjs` (CDN).
   - `@tensorflow-models/coco-ssd` (CDN).
+    
 
 
