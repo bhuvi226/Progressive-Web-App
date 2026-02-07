@@ -30,26 +30,36 @@ python -m http.server 4173
 npm install -g serve
 serve -l 4173 .
 ```
-DEMO LINk of PWA:http://localhost:4173/
 
-Then open:
-
-
-- `http://localhost:4173/` in your browser.
+Then open `http://localhost:4173/` in your browser.
 
 You should see the **Image Scanner** UI. The first load might take a few seconds while TensorFlow.js and the model download.
 
-## Deploying (so others can use it)
+## Deploying (run online so anyone can use it)
 
-To run on other machines, deploy the app to a host. The app now uses **relative paths**, so it works on GitHub Pages, Netlify, Vercel, or any subpath.
+The app uses **relative paths** and works on any host. Choose one:
 
-**GitHub Pages:**
+**Option A: Netlify (easiest)**
 
-1. Go to your repo → **Settings** → **Pages**.
-2. Under **Source**, select the `main` branch and `/ (root)` folder.
-3. Save. Your app will be at `https://<username>.github.io/Progressive-Web-App/`.
+1. Push this repo to GitHub.
+2. Go to [netlify.com](https://netlify.com) → **Add new site** → **Import an existing project**.
+3. Connect your GitHub repo, pick this project. Leave build settings as default (publish directory: root).
+4. Deploy. You get a URL like `https://your-site-name.netlify.app`.
 
-**Important:** Others must open the app over **HTTPS** (or localhost). Opening `index.html` directly as a file (`file://`) will not work for camera or service workers.
+**Option B: Vercel**
+
+1. Push this repo to GitHub.
+2. Go to [vercel.com](https://vercel.com) → **Add New** → **Project**.
+3. Import your GitHub repo. Deploy.
+4. You get a URL like `https://your-project.vercel.app`.
+
+**Option C: GitHub Pages**
+
+1. Repo → **Settings** → **Pages**.
+2. Source: **Deploy from a branch**. Branch: `main`, folder: `/ (root)`.
+3. Save. App will be at `https://<username>.github.io/<repo-name>/`.
+
+**Important:** The app must run over **HTTPS** (or localhost). Opening `file://index.html` will not work for camera or service workers.
 
 ## How It Works
 
