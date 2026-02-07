@@ -37,6 +37,18 @@ Then open:
 
 You should see the **Image Scanner** UI. The first load might take a few seconds while TensorFlow.js and the model download.
 
+## Deploying (so others can use it)
+
+To run on other machines, deploy the app to a host. The app now uses **relative paths**, so it works on GitHub Pages, Netlify, Vercel, or any subpath.
+
+**GitHub Pages:**
+
+1. Go to your repo → **Settings** → **Pages**.
+2. Under **Source**, select the `main` branch and `/ (root)` folder.
+3. Save. Your app will be at `https://<username>.github.io/Progressive-Web-App/`.
+
+**Important:** Others must open the app over **HTTPS** (or localhost). Opening `index.html` directly as a file (`file://`) will not work for camera or service workers.
+
 ## How It Works
 
 - **Image capture / upload**:

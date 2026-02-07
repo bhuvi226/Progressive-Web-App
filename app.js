@@ -272,11 +272,11 @@ clearButton.addEventListener("click", () => {
   statusEl.classList.add("ok");
 });
 
-// Register service worker for PWA features
+// Register service worker for PWA features (use relative path so it works on GitHub Pages / any subpath)
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
-      .register("/service-worker.js")
+      .register("./service-worker.js")
       .catch((err) => console.warn("Service worker registration failed:", err));
   });
 }

@@ -1,11 +1,13 @@
-const CACHE_NAME = "image-scanner-pwa-v1";
+const CACHE_NAME = "image-scanner-pwa-v2";
 
+// Use paths relative to this script so it works on GitHub Pages and any subpath deployment
+const base = new URL(".", self.location.href).href;
 const CORE_ASSETS = [
-  "/",
-  "/index.html",
-  "/style.css",
-  "/app.js",
-  "/manifest.webmanifest"
+  base,
+  base + "index.html",
+  base + "style.css",
+  base + "app.js",
+  base + "manifest.webmanifest"
 ];
 
 self.addEventListener("install", (event) => {
