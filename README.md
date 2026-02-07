@@ -39,28 +39,6 @@ You should see the **Image Scanner** UI. The first load might take a few seconds
 
 The app uses **relative paths** and works on any host. Choose one:
 
-**Option A: Netlify (easiest)**
-
-1. Push this repo to GitHub.
-2. Go to [netlify.com](https://netlify.com) → **Add new site** → **Import an existing project**.
-3. Connect your GitHub repo, pick this project. Leave build settings as default (publish directory: root).
-4. Deploy. You get a URL like `https://your-site-name.netlify.app`.
-
-**Option B: Vercel**
-
-1. Push this repo to GitHub.
-2. Go to [vercel.com](https://vercel.com) → **Add New** → **Project**.
-3. Import your GitHub repo. Deploy.
-4. You get a URL like `https://your-project.vercel.app`.
-
-**Option C: GitHub Pages**
-
-1. Repo → **Settings** → **Pages**.
-2. Source: **Deploy from a branch**. Branch: `main`, folder: `/ (root)`.
-3. Save. App will be at `https://<username>.github.io/<repo-name>/`.
-
-**Important:** The app must run over **HTTPS** (or localhost). Opening `file://index.html` will not work for camera or service workers.
-
 ## How It Works
 
 - **Image capture / upload**:
@@ -102,6 +80,8 @@ The app uses **relative paths** and works on any host. Choose one:
 - **Libraries used**:
   - `@tensorflow/tfjs` (CDN).
   - `@tensorflow-models/coco-ssd` (CDN).
+
+    DEMO LINK:https://progressive-web-app-teal-nine.vercel.app/
     
 
 
